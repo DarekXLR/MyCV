@@ -18,6 +18,18 @@ article {
     height: calc(85vh - 40px);
   }
 
+  .swipe-helper {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    z-index: 2;
+    color: rgba(0, 0, 0, 0.424);
+    opacity: 0;
+    animation: swipe 0.8s 3 linear alternate, dissapear 2s linear both;
+  }
+
   .menu {
     display: flex;
     width: 100%;
@@ -78,7 +90,6 @@ article {
     (orientation: portrait)and(min-width:768px) {
       transform: translateZ(-560px);
     }
-
 
   }
 
@@ -177,6 +188,32 @@ article {
       border-radius: 5px;
     }
   }
+}
 
+@keyframes swipe {
+  0% {
+    left: 20%;
+  }
 
+  100% {
+    left: 80%;
+  }
+}
+
+@keyframes dissapear {
+  0% {
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  95% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
