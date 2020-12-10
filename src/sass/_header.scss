@@ -1,0 +1,24 @@
+header {
+    position: relative;
+    background-image: url("../images/header-bcg-474_1280.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    height: 15vh;
+
+    h1 {
+        text-transform: uppercase;
+        font-style: italic;
+        line-height: 15vh;
+        letter-spacing: 2px;
+        font-size: 2 * $mfz;
+        font-weight: bold;
+        text-shadow: 0 0 20px rgb(255, 255, 255);
+        background-color: rgba(255, 255, 255, 0.109);
+
+        @media (orientation: portrait)and(min-width:768px),
+        (min-width:1024px) {
+            font-size: 2.5*$mfz;
+        }
+    }
+}

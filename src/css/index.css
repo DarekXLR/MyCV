@@ -1,0 +1,26 @@
+body {
+  background-color: darkblue;
+  font-family: arial;
+}
+
+body img {
+  width: 100%;
+  max-width: 300px;
+}
+
+footer {
+  background-color: white;
+  color: black;
+  background-image: url("../images/hills.jpg");
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 80px;
+}
+/*# sourceMappingURL=index.css.map */

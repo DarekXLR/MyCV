@@ -1,0 +1,29 @@
+.content {
+  max-width: 1440px;
+  margin: auto;
+
+  box-shadow: 0 0 15px white;
+
+}
+
+main {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+h3 {
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 20px auto;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgb(241, 241, 192);
+}
+
+h4 {
+  font-size: 25px;
+  color: black;
+  margin: 10px 0;
+}

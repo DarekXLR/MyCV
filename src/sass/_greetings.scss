@@ -1,0 +1,51 @@
+body {
+    font-family: $main-font;
+}
+
+.greeting {
+    background-image: url("../images/header-bcg-474_1280.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.language {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    width: 100%;
+    padding-bottom: 2* $main-spacing;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgba(50, 236, 50, 0.411);
+    border: 2px solid black;
+    box-shadow: 0 0 4px 0 black;
+
+    &__intro {
+        width: 100%;
+
+        p {
+            font-weight: bold;
+            font-size: 3*$mfz;
+            text-align: center;
+            margin: $main-spacing;
+        }
+    }
+}
+
+.language button {
+    padding: 10px 40px;
+    font-size: 2 * $mfz;
+    background-color: rgba(74, 114, 206, 0.534);
+    border: 2px solid black;
+
+
+}
+
+.language button:hover {
+    box-shadow: 0 0 4px 0 yellow;
+}

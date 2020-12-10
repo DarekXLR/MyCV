@@ -1,0 +1,102 @@
+aside {
+  margin: 20px;
+
+  .pages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.555);
+      margin: 10px;
+
+      @media (orientation: landscape) {
+
+        width: 45%;
+      }
+
+      @media (min-width:760px) {
+
+        width: 45%;
+      }
+
+      @media (min-width:1100px) {
+
+        width: 30%;
+      }
+
+      a {
+        text-decoration: none;
+        cursor: pointer;
+
+      }
+    }
+
+    img {
+      width: 100%;
+      padding: 15px;
+
+
+    }
+  }
+
+  .more-pages {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    p {
+      width: 100%;
+      display: block;
+      font-size: 26px;
+      text-align: center;
+      margin: 15px;
+    }
+
+    i {
+
+      font-size: 50px;
+      margin: 15px;
+      margin-right: 5%;
+      animation: arrow infinite linear 0.5s alternate;
+    }
+
+    a {
+      align-self: flex-end;
+      margin: 15px;
+    }
+
+    img {
+      width: 100px;
+      animation: glow infinite 2s alternate;
+      cursor: pointer;
+    }
+
+  }
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 0 white);
+
+  }
+
+  100% {
+    filter: drop-shadow(0 0 15px white);
+  }
+}
+
+@keyframes arrow {
+  0% {
+    transform: translateX(-40%)
+  }
+
+
+  100% {
+    transform: translateX(40%)
+  }
+}
