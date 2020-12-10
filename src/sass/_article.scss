@@ -1,7 +1,7 @@
 article {
   height: 400px;
   text-align: center;
-  cursor: pointer;
+  cursor: move;
   max-height: 600px;
 
   @media (orientation: portrait)and(min-width:321px) {
