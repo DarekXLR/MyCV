@@ -10,6 +10,8 @@
 
         p {
             flex-grow: 1;
+            // font-size: 20px;
+
         }
 
         p span:nth-last-child(1) {
@@ -89,8 +91,7 @@
 }
 
 .flip-card-back {
-    background-color: rgb(2, 120, 203);
-    background: linear-gradient(315deg, rgb(197, 228, 250) 19%, rgb(186, 206, 243) 57%, rgb(199, 246, 201) 100%);
+    background-color: rgb(203, 245, 246);
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
