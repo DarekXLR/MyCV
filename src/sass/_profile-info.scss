@@ -10,14 +10,12 @@
 
         p {
             flex-grow: 1;
-            font-size: 20px;
 
         }
 
         p span:nth-last-child(1) {
             font-style: italic;
             font-weight: bold;
-
             letter-spacing: 1.5px;
         }
     }
@@ -104,8 +102,8 @@
         height: calc(100% - 40px);
 
         p {
-            flex-basis: 20%;
-            padding: 10px;
+
+            margin: 10px 0 0 10px;
             text-align: left;
         }
     }
