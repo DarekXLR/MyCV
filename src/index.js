@@ -5,3 +5,4 @@ import './components/profile';
 import './components/proile-card';
 import './components/skills';
 import './components/retunrTop';
+import './components/courses-list';

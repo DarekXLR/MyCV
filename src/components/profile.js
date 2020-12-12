@@ -18,11 +18,11 @@ const setDistance = () => {
   const width = screen.width;
 
   if (orientation === 0 && width < 361) {
-    distanceValue = -386;
+    distanceValue = -480;
   } else if (orientation === 90 && width < 641) {
-    distanceValue = -560;
+    distanceValue = -720;
   } else {
-    distanceValue = -560;
+    distanceValue = -720;
   }
 }
 
@@ -35,20 +35,23 @@ window.addEventListener("orientationchange", setDistance);
 const handleColorChange = (degree) => {
   btns.map(btn => btn.classList.remove('color'));
   switch (degree) {
-    case 90:
+    case 72:
       btns[0].classList.add('color');
       break;
-    case 45:
+    case 36:
       btns[1].classList.add('color')
       break;
     case 0:
       btns[2].classList.add('color')
       break;
-    case -45:
+    case -36:
       btns[3].classList.add('color')
       break;
-    case -90:
+    case -72:
       btns[4].classList.add('color')
+      break;
+    case -108:
+      btns[5].classList.add('color')
       break;
   }
 };
@@ -56,19 +59,22 @@ const handleColorChange = (degree) => {
 const handleBtnClick = (index) => {
   switch (index) {
     case 0:
-      change = 90
+      change = 72
       break;
     case 1:
-      change = 45
+      change = 36
       break;
     case 2:
       change = 0
       break;
     case 3:
-      change = -45
+      change = -36
       break;
     case 4:
-      change = -90
+      change = -72
+      break;
+    case 5:
+      change = -108
       break;
   }
   handleColorChange(change);
@@ -91,8 +97,8 @@ const handleMove = (event) => {
     startPositionX = x;
   }
 
-  if (change > 120) {
-    change = 120
+  if (change > 90) {
+    change = 90
   } else if (change < -120) {
     change = -120
   };
@@ -109,18 +115,18 @@ const handleSwipe = (event) => {
 
 const handleRelease = (event) => {
   event.preventDefault();
-  // slider.style.transform = ('scale(1)')
-  if (change < -60) {
-    change = -90
-  } else if (-61 < change && change < -30) {
-    change = -45
-
-  } else if (-31 < change && change < 31) {
+  if (change < -90) {
+    change = -108
+  } else if (-91 < change && change < -60) {
+    change = -72
+  } else if (-61 < change && change < -25) {
+    change = -36
+  } else if (-26 < change && change < 26) {
     change = 0
-  } else if (61 > change && change > 30) {
-    change = 45
+  } else if (61 > change && change > 25) {
+    change = 36
   } else if (change > 60) {
-    change = 90
+    change = 72
   }
   handleColorChange(change);
   slider.style.transform = (`translateZ(${distanceValue}px)  scale(1) rotateY(${change}deg)`)
@@ -157,8 +163,8 @@ const handleTouchMove = (event) => {
     startPositionX = x;
   }
   change += move;
-  if (change > 120) {
-    change = 120
+  if (change > 90) {
+    change = 90
   } else if (change < -120) {
     change = -120
   };
@@ -178,16 +184,18 @@ const handleTouchSwipe = (event) => {
 
 const handleTouchRelease = (event) => {
   event.preventDefault();
-  if (change < -60) {
-    change = -90
-  } else if (-61 < change && change < -30) {
-    change = -45
-  } else if (-31 < change && change < 31) {
+  if (change < -90) {
+    change = -108
+  } else if (-91 < change && change < -60) {
+    change = -72
+  } else if (-61 < change && change < -25) {
+    change = -36
+  } else if (-26 < change && change < 26) {
     change = 0
-  } else if (61 > change && change > 30) {
-    change = 45
+  } else if (61 > change && change > 25) {
+    change = 36
   } else if (change > 60) {
-    change = 90
+    change = 72
   }
   handleColorChange(change);
   slider.style.transform = (`translateZ(${distanceValue}px)  scale(1) rotateY(${change}deg)`)

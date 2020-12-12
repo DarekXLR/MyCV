@@ -1,8 +1,8 @@
 article {
   height: 400px;
   text-align: center;
-  cursor: move;
-  max-height: 600px;
+
+  max-height: 550px;
 
   @media (orientation: portrait)and(min-width:321px) {
 
@@ -39,12 +39,19 @@ article {
 
     li {
       display: block;
-      width: 18%;
+      width: 15%;
       text-align: center;
       font-size: 30px;
       border-radius: 10px;
       background-color: #fff;
       transition: 0.5s;
+      cursor: pointer;
+
+      @media (orientation: landscape),
+      (orientation: portrait)and(min-width:768px) {
+        font-size: 40px;
+      }
+
     }
 
     li.color {
@@ -83,12 +90,13 @@ article {
     width: 100%;
     position: absolute;
     transform-style: preserve-3d;
-    transform: translateZ(-386px);
+    transform: translateZ(-480px);
     transition: 0.3s;
+    cursor: move;
 
     @media (orientation: landscape),
     (orientation: portrait)and(min-width:768px) {
-      transform: translateZ(-560px);
+      transform: translateZ(-720px);
     }
 
   }
@@ -106,62 +114,76 @@ article {
 
   .slider-experience {
 
-    transform: rotateY(-90deg) scale(1) translateZ(386px);
+    transform: rotateY(-72deg) translateZ(480px);
 
     @media (orientation: landscape),
     (orientation: portrait)and(min-width:768px) {
-      transform: rotateY(-90deg) scale(1) translateZ(560px);
+      transform: rotateY(-72deg) translateZ(720px);
     }
 
   }
 
   .slider-programming {
 
-    transform: rotateY(45deg) translateZ(386px);
+    transform: rotateY(36deg) translateZ(480px);
 
     @media (orientation: landscape),
     (orientation: portrait)and(min-width:768px) {
-      transform: rotateY(45deg) translateZ(560px);
+      transform: rotateY(36deg) translateZ(720px);
     }
   }
 
   .slider-languages {
 
-    transform: rotateY(90deg) translateZ(386px);
+    transform: rotateY(72deg) translateZ(480px);
 
     @media (orientation: landscape),
     (orientation: portrait)and(min-width:768px) {
-      transform: rotateY(90deg) translateZ(560px);
+      transform: rotateY(72deg) translateZ(720px);
     }
   }
 
   .slider-education {
 
-    transform: rotateY(-45deg) translateZ(386px);
+    transform: rotateY(-36deg) translateZ(480px);
 
     @media (orientation: landscape),
     (orientation: portrait)and(min-width:768px) {
-      transform: rotateY(-45deg) translateZ(560px);
+      transform: rotateY(-36deg) translateZ(720px);
+    }
+  }
+
+  .slider-hobbies {
+
+    transform: rotateY(108deg) translateZ(480px);
+
+
+    @media (orientation: landscape),
+    (orientation: portrait)and(min-width:768px) {
+      transform: rotateY(108deg) translateZ(720px);
     }
   }
 
   .profile-info {
 
-    transform: translateZ(386px);
+    transform: translateZ(480px);
     background-color: transparent;
     border: none;
 
     @media (orientation: landscape),
     (orientation: portrait)and(min-width:768px) {
-      transform: translateZ(560px);
+      transform: translateZ(720px);
     }
   }
+
+
+
+
 
   .slider-inner {
     height: 100%;
     display: grid;
     grid-auto-rows: max-content;
-
     padding: 10px;
     grid-row-gap: 10px;
     grid-column-gap: 2px;
@@ -182,12 +204,87 @@ article {
       display: flex;
       justify-content: center;
       text-align: initial;
-      padding: 15px 10px;
+      padding: 5px 10px;
       background-color: #d8d8d8;
       line-height: 140%;
       border-radius: 5px;
     }
   }
+
+  .courses-box {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    position: relative;
+
+
+    i {
+      display: none
+    }
+
+
+    @media (orientation: landscape)and (max-height:500px) {
+      height: 110px;
+      overflow: hidden;
+
+      i {
+        display: block;
+        position: absolute;
+        right: 20px;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .fa-angle-up {
+        top: 10px;
+      }
+
+      .fa-angle-down {
+        bottom: 0px;
+      }
+    }
+
+
+  }
+
+  .courses-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-row-gap: 5px;
+    grid-column-gap: 2px;
+
+    height: 110px;
+    transition: 0.3s;
+
+
+
+    // grid-auto-rows: max-content;
+    p {
+      justify-content: left;
+    }
+
+
+  }
+
+  .languages,
+  .hobbies {
+    grid-template-columns: 100%;
+
+    .languages-box,
+    .hobbies-list {
+      display: grid;
+
+      grid-row-gap: 10px;
+      grid-column-gap: 2px;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
 }
 
 @keyframes swipe {

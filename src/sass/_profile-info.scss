@@ -84,8 +84,21 @@
     left: 0;
     bottom: 0;
 
+
     @media (orientation: landscape) {
         height: 40px;
+    }
+
+    .fa-chevron-left {
+        color: transparent;
+        text-shadow: 10px 0 0 white, 30px 0 0 white;
+        animation: movementLeft 2s linear infinite alternate;
+    }
+
+    .fa-chevron-right {
+        color: transparent;
+        text-shadow: -10px 0 0 white, -30px 0 0 white;
+        animation: movementRight 2s linear infinite alternate;
     }
 }
 
@@ -108,4 +121,42 @@
             text-align: left;
         }
     }
+}
+
+@keyframes movementRight {
+    0% {
+        text-shadow: -20px 0 0 white, -30px 0 0 white;
+    }
+
+    40% {
+        text-shadow: -10px 0 0 white, -20px 0 0 white;
+    }
+
+    80% {
+        text-shadow: -20px 0 0 white, -30px 0 0 white;
+    }
+
+    100% {
+        text-shadow: -20px 0 0 white, -30px 0 0 white;
+    }
+
+}
+
+@keyframes movementLeft {
+    0% {
+        text-shadow: 20px 0 0 white, 30px 0 0 white;
+    }
+
+    40% {
+        text-shadow: 10px 0 0 white, 20px 0 0 white;
+    }
+
+    80% {
+        text-shadow: 20px 0 0 white, 30px 0 0 white;
+    }
+
+    100% {
+        text-shadow: 20px 0 0 white, 30px 0 0 white;
+    }
+
 }
