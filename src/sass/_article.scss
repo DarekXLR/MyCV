@@ -211,62 +211,87 @@ article {
     }
   }
 
-  .courses-box {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    position: relative;
+  .programming {
+    grid-template-rows: auto auto 1fr;
 
+    .courses-box {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      position: relative;
+      height: 100%;
+      padding: 20px 0;
 
-    i {
-      display: none
-    }
+      @media (orientation:landscape) {
+        padding: 0;
+      }
 
+      @media (min-height:560px) {
+        padding: 0;
 
-    @media (orientation: landscape)and (max-height:500px) {
-      height: 110px;
-      overflow: hidden;
+        i {
+          display: none
+        }
+      }
 
       i {
-        display: block;
         position: absolute;
-        right: 20px;
-        transform: translate(-50%, -50%);
-        font-size: 20px;
-        cursor: pointer;
+        right: 50%;
+        transform: translateX(50%);
+        z-index: 3;
+
+        @media (orientation: landscape) {
+          right: 10px;
+        }
       }
 
       .fa-angle-up {
-        top: 10px;
+        top: 0;
       }
 
       .fa-angle-down {
-        bottom: 0px;
+        bottom: 0;
       }
     }
 
+    .list-wrapper {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
 
-  }
+      @media (orientation: landscape) {
+        height: 69px;
+      }
 
-  .courses-list {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: grid;
-    grid-row-gap: 5px;
-    grid-column-gap: 2px;
+      @media (orientation: landscape)and(min-height:360px) {
+        height: 106px;
+      }
 
-    height: 110px;
-    transition: 0.3s;
+      @media (orientation: landscape)and(min-height:410px) {
+        height: 143px;
+      }
 
-
-
-    // grid-auto-rows: max-content;
-    p {
-      justify-content: left;
+      @media (orientation:landscape)and(min-width:768px) {
+        height: 100%;
+      }
     }
 
+    .courses-list {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: grid;
+      grid-row-gap: 5px;
+      grid-column-gap: 2px;
+      transition: 0.3s;
+
+
+      p {
+        justify-content: left;
+      }
+    }
 
   }
+
 
   .languages,
   .hobbies {
@@ -276,8 +301,12 @@ article {
     .hobbies-list {
       display: grid;
 
-      grid-row-gap: 10px;
+      grid-row-gap: 2px;
       grid-column-gap: 2px;
+
+      @media (min-height:321px) {
+        grid-row-gap: 10px;
+      }
 
       span {
         font-weight: bold;

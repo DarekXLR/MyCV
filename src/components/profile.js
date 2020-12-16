@@ -13,7 +13,7 @@ let distanceValue = 0;
 
 const setDistance = () => {
 
-  distanceValue = 20
+  distanceValue = 0
   const orientation = screen.orientation.angle;
   const width = screen.width;
 
