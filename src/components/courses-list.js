@@ -55,6 +55,8 @@ const setHeight = () => {
     elementHeight = -37 * 2;
     console.log('x2')
   }
+    coursesPositionTop = 0;
+  coursesList.style.top = `${coursesPositionTop}px`
 }
 
 setHeight()
@@ -64,7 +66,3 @@ moveUp.addEventListener('click', () => handleMove('up'));
 moveDown.addEventListener('click', () => handleMove('down'));
 moveUp.addEventListener('touchend', () => handleMove('up'));
 moveDown.addEventListener('touchend', () => handleMove('down'));
-window.addEventListener("orientationchange", () => {
-  coursesPositionTop = 0;
-  coursesList.style.top = `${coursesPositionTop}px`
-})

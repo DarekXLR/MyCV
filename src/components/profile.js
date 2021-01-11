@@ -136,8 +136,8 @@ const handleRelease = (event) => {
 };
 
 const handleTouchMove = (event) => {
-  const x = event.changedTouches[0].clientX;
-  const y = event.changedTouches[0].clientY;
+  const x = event.changedTouches[0].clientX || event.touches[0].pageX;
+  const y = event.changedTouches[0].clientY || event.touches[0].pageY;
   const ySwipe = startPositionY - y;
   if (ySwipe > 50) {
 
@@ -172,9 +172,9 @@ const handleTouchMove = (event) => {
   slider.style.transform = (` translateZ(${distanceValue}px)  scale(0.8) rotateY(${change}deg)`)
 }
 const handleTouchSwipe = (event) => {
-  startPositionX = event.changedTouches[0].clientX;
-  startPositionY = event.changedTouches[0].clientY;
-  currentX = event.changedTouches[0].clientX;
+  startPositionX = event.changedTouches[0].clientX || event.touches[0].pageX;
+  startPositionY = event.changedTouches[0].clientY || event.touches[0].pageY;
+  currentX = event.changedTouches[0].clientX || event.touches[0].pageX;
   const skills = document.querySelector('.skills');
   position = skills.offsetTop;
   event.preventDefault();
