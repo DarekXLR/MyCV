@@ -157,7 +157,7 @@ const handleTouchMove = (event) => {
 
   }
 
-  move = Number(((x - currentX) / 4).toFixed(0));
+  move = Number(((x - currentX) / 8).toFixed(0));
   change += move;
   if (move !== 0) {
     startPositionX = x;
